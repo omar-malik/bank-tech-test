@@ -7,5 +7,10 @@ describe('BankAccount', () => {
     expect(bankAccount.getBalance()).toBe(1000)
   })
 
-
+  it('withdraws 500', () => {
+    const bankAccount = new BankAccount;
+    bankAccount.deposit(1000)
+    bankAccount.withdraw(500)
+    expect(bankAccount.getBalance()).toBe(500)
+  })
 })
