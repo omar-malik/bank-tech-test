@@ -19,11 +19,22 @@ class BankAccount {
     "debit": amount.toFixed(2), 
     "balance": this.getBalance()})
   }
-  
+
   getBalance() {
     return this.balance
 
   }
+
+  printStatement() {
+    let statementString = "date || credit || debit || balance\n"
+    this.statement = this.statement.reverse()
+    this.statement.forEach(transaction => {
+      statementString += `${transaction.date} || ${transaction.credit || ""} || ${transaction.debit || ""} || ${transaction.balance.toFixed(2)}\n`
+    })
+    console.log(statementString)
+    return statementString
+  }
+
 
 }
 
